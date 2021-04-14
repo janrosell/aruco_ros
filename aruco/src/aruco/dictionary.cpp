@@ -2544,8 +2544,10 @@ cv::Mat Dictionary::getMarkerImage_id(int id, int bit_size, bool addWaterMark, b
     sprintf(idcad, "#%d", id);
     float ax = static_cast<float>(A) / 100.f;
     int linew = 1 + (img.rows / 500);
+    //cv::putText(img, idcad, cv::Point(0, img.rows - img.rows / 40), cv::FONT_HERSHEY_COMPLEX, ax * 0.15f,
+    //            cv::Scalar::all(30), linew, CV_AA);
     cv::putText(img, idcad, cv::Point(0, img.rows - img.rows / 40), cv::FONT_HERSHEY_COMPLEX, ax * 0.15f,
-                cv::Scalar::all(30), linew, CV_AA);
+                cv::Scalar::all(30), linew, cv::LINE_AA);
   }
 
   if (enclosed_corners)

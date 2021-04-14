@@ -124,7 +124,8 @@ public:
     if (in.type() == CV_8UC1)
       grey = in;
     else
-      cv::cvtColor(in, grey, CV_BGR2GRAY);
+      //cv::cvtColor(in, grey, CV_BGR2GRAY);
+      cv::cvtColor(in, grey, cv::COLOR_RGB2GRAY);
 
     // resize to svm path size
     cv::Mat greyResized;
